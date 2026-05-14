@@ -36,7 +36,7 @@ int main() {
     Pthread_create(&threads[i], customer, id);
   }
 
-  sem_post(&accu_barrier);
+  // sem_post(&accu_barrier);
 
   for (int i = 0; i < TOTAL_GUESTS; i++) {
     int result = pthread_join(threads[i], NULL);
@@ -84,10 +84,10 @@ void *leave_the_restaurant(void *arg) {
 void *customer(void *arg) {
   int id = *(int *)arg;
 
-  printf("Hit the accu barrier\n");
+  // printf("Hit the accu barrier\n");
 
-  sem_wait(&accu_barrier);
-  sem_post(&accu_barrier);
+  // sem_wait(&accu_barrier);
+  // sem_post(&accu_barrier);
 
   enter_the_restaurant(arg);
   lunch();
