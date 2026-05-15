@@ -4,7 +4,6 @@
 *.out
 *.exe
 
-the_bus_problem
 
 build/
 bin/
